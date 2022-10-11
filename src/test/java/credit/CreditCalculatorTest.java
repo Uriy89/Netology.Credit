@@ -30,7 +30,7 @@ class CreditCalculatorTest {
         int months = 24;
         double monthPercent = Double.parseDouble(decimalFormat.format(months / percent));
         double res = Double.parseDouble(decimalFormat.format(monthPercent + sum));
-        assertTrue(res == calculator.monthPaymentCalc(sum, percent, months));
+        assertTrue(res == calculator.totalAmount(sum, percent, months));
     }
 
     @Test
@@ -43,6 +43,6 @@ class CreditCalculatorTest {
         double monthPercent = Double.parseDouble(decimalFormat.format(months / percent));
         double allPay = Double.parseDouble(decimalFormat.format(monthPercent + sum));
         double res = Double.parseDouble(decimalFormat.format(allPay - sum));
-        assertTrue(res == calculator.monthPaymentCalc(sum, percent, months));
+        assertTrue(res == calculator.allOverpayments(sum, percent, months));
     }
 }
